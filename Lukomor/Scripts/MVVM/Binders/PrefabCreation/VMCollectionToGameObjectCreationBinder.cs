@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Lukomor.MVVM.Binders
 {
-    public class VMCollectionToGameObjectCreationBinder : ObservableCollectionBinder<IViewModel>
+    public class VmCollectionToGameObjectCreationBinder : ObservableVMCollectionBinder<IViewModel>
     {
         [SerializeField] private View _prefabView;
 

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Lukomor.MVVM.Binders
 {
-    public class VMCollectionToGameObjectFromListCreationBinder : ObservableCollectionBinder<IViewModel>
+    public class VmCollectionToGameObjectFromListCreationBinder : ObservableVMCollectionBinder<IViewModel>
     {
         [SerializeField] private ViewModelToViewMapper _mapper;
         

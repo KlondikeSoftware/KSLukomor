@@ -1,12 +1,15 @@
-using System;
+﻿using System;
 using System.Reactive.Disposables;
-using Lukomor.MVVM;
-using Lukomor.MVVM.Binders;
 using Lukomor.Reactive;
 
-namespace com.ksgames.rpgcore.inventory.binders
+namespace Lukomor.MVVM.Binders
 {
-    public abstract class ObservableCollectionBinder<T> : ObservableCollectionBinder 
+    public abstract class ObservableCollectionBinder : Binder
+    {
+        public abstract Type ArgumentType { get; }
+    }
+
+    public abstract class ObservableVMCollectionBinder<T> : ObservableCollectionBinder where T : IViewModel
     {
         public override Type ArgumentType => typeof(T);
 
@@ -25,7 +28,7 @@ namespace com.ksgames.rpgcore.inventory.binders
             return compositeDisposable;
         }
         
-        protected abstract void OnItemAdded(T viewModel);
+        protected abstract void OnItemAdded(T value);
         protected abstract void OnItemRemoved(T value);
     }
 }
