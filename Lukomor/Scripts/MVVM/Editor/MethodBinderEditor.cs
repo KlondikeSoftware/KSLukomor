@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -67,3 +68,4 @@ namespace Lukomor.MVVM.Editor
         protected abstract IEnumerable<MethodInfo> GetMethodsInfo();
     }
 }
+#endif

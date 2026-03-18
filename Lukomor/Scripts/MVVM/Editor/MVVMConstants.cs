@@ -1,4 +1,5 @@
-﻿namespace Lukomor.MVVM.Editor
+﻿#if UNITY_EDITOR
+namespace Lukomor.MVVM.Editor
 {
     public static class MVVMConstants
     {
@@ -11,3 +12,4 @@
         public const string HIGHLIGHT_PARENT_VIEW = "Highlight Parent View";
     }
 }
+#endif

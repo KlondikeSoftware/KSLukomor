@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using Lukomor.MVVM.Binders;
 using UnityEditor;
 
@@ -27,3 +28,4 @@ namespace Lukomor.MVVM.Editor
         }
     }
 }
+#endif

@@ -1,4 +1,5 @@
-﻿using System;
+﻿#if UNITY_EDITOR
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
@@ -64,3 +65,4 @@ namespace Lukomor.MVVM.Editor
         protected abstract bool IsValidProperty(Type propertyType);
     }
 }
+#endif

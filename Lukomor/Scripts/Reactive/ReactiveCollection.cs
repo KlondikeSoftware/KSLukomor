@@ -11,6 +11,8 @@ namespace Lukomor.Reactive
         public int Count => _items.Count;
         public bool IsReadOnly => false;
         public IObservable<T> Added { get; }
+        
+        public IObservable<T> AddedNH { get; } // no history
         public IObservable<T> Removed { get; }
         
         private Action<T> _itemAdded;
@@ -24,6 +26,10 @@ namespace Lukomor.Reactive
                 .Concat(Observable.FromEvent<T>(
                     a => _itemAdded += a,
                     a => _itemAdded -= a, Scheduler.Immediate));
+            
+            AddedNH = Observable.FromEvent<T>(
+                    a => _itemAdded += a,
+                    a => _itemAdded -= a, Scheduler.Immediate);
 
             Removed = Observable.FromEvent<T>(
                 a => _itemRemoved += a,
