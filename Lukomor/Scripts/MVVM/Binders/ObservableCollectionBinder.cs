@@ -1,10 +1,8 @@
 using System;
 using System.Reactive.Disposables;
-using Lukomor.MVVM;
-using Lukomor.MVVM.Binders;
 using Lukomor.Reactive;
 
-namespace com.ksgames.rpgcore.inventory.binders
+namespace Lukomor.MVVM.Binders
 {
     public abstract class ObservableCollectionBinder<T> : ObservableCollectionBinder 
     {
