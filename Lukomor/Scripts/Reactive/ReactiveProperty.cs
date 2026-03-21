@@ -80,7 +80,15 @@ namespace Lukomor.Reactive
                     
             for (var i = 0; i < count; i++)
             {
-                _observers[i].OnNext(newValue);
+                try
+                {
+                    _observers[i].OnNext(newValue);
+                }
+                catch (Exception e)
+                {
+                    continue;
+                }
+               
             }
         }
     }
