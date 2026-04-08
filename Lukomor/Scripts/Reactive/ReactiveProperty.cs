@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lukomor.Reactive
 {
@@ -31,6 +32,17 @@ namespace Lukomor.Reactive
         }
         
         public bool HasValue => _hasValue;
+
+        public void Dispose()
+        {
+            foreach (var observer in _observers.ToList())
+            {
+                observer.OnCompleted();
+            }
+            _observers.Clear();
+            _hasValue = false;
+            _value = default;
+        }
 
         public ReactiveProperty() { }
 
