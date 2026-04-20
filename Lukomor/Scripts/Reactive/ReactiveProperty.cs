@@ -82,7 +82,7 @@ namespace Lukomor.Reactive
         public void Set(T newValue)
         {
             _value = newValue;
-            
+            _hasValue = true;
             NotifyAboutNewValue(newValue);
         }
 
