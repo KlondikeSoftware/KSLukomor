@@ -98,6 +98,7 @@ namespace Lukomor.Reactive
                 }
                 catch (Exception e)
                 {
+                    Debug.LogException(e);
                     continue;
                 }
                
