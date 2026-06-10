@@ -89,13 +89,16 @@ namespace Lukomor.Reactive
 
         private void NotifyAboutNewValue(T newValue)
         {
-            var count = _observers.Count;
+            var observers = _observers.ToList();
                     
-            for (var i = 0; i < count; i++)
+            foreach (var observer in observers)
             {
+                if (!_observers.Contains(observer))
+                    continue;
+
                 try
                 {
-                    _observers[i].OnNext(newValue);
+                    observer.OnNext(newValue);
                 }
                 catch (Exception e)
                 {
