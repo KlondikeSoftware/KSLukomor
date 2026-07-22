@@ -67,6 +67,15 @@ namespace Lukomor.Reactive
 
             return new ReactiveSubscription<T>(this, observer);
         }
+        public IDisposable SilentSubscribe(IObserver<T> observer)
+        {
+            if (!_observers.Contains(observer))
+            {
+                _observers.Add(observer);
+            }
+            
+            return new ReactiveSubscription<T>(this, observer);
+        }
         
         public void Unsubscribe(IObserver<T> observer)
         {
