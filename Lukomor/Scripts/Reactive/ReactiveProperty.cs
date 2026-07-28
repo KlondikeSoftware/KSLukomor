@@ -117,5 +117,10 @@ namespace Lukomor.Reactive
                
             }
         }
+        
+        public void NoAlert()
+        {
+            _hasValue = false;
+        }
     }
 }
